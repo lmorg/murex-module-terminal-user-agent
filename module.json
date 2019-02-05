@@ -1,0 +1,8 @@
+[
+	{
+		"Name": "terminal-user-agent",
+		"Summary": "Open handler for HTTP and HTTPS URLs",
+		"Version": "1.0",
+		"Source": "terminal-user-agent.mx"
+	}
+]

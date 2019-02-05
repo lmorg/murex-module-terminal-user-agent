@@ -1,0 +1,50 @@
+switch {
+    if { which: browsh } { out: browsh }
+    if { which: w3m    } { out: w3m    }
+    if { which: elinks } { out: elinks }
+    if { which: lynx   } { out: lynx   }
+} -> format json -> set httpuseragent
+
+config define open url ({
+    "Description":  "Which mode to render HTML to the terminal",
+    "DataType":     "str",
+    "Default":      "$httpuseragent[0]",
+    "Options":      $httpuseragent
+})
+
+private open.http.get.args {
+    switch $ARGS[1] {
+        case browsh {
+            out: "browsh\n--startup-url"
+        }
+        catch {
+            out: $ARGS[1]
+        }
+    }
+}
+
+func http {
+    # Render a web page in the terminal
+    open.http.start.user.agent http $ARGS[1]
+}
+
+func https {
+    # Render a web page in the terminal
+    open.http.start.user.agent https $ARGS[1]
+}
+
+private open.http.start.user.agent {
+    test define config {
+        "OutRegexp": "[a-z]+",
+        "ExitNum": 0
+    }
+
+    test define args {
+        "OutRegexp": "[a-z]+",
+        "ExitNum": 0
+    }
+
+    open.http.get.args <test_args> ${ config: <test_config> get open url } -> set cmd
+    #tsplit: ({ @cmd http:$ARGS[1] })
+    exec: @cmd $ARGS[1]:$ARGS[2]
+}

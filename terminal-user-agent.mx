@@ -3,7 +3,7 @@ switch {
     if { which: w3m    } { out: w3m    }
     if { which: elinks } { out: elinks }
     if { which: lynx   } { out: lynx   }
-    if { which: get    } { out: get    }
+    if { bexists: get  } { out: get    }
 } -> format json -> set httpuseragent
 
 config define open url ({

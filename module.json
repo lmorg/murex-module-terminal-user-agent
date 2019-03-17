@@ -1,9 +1,9 @@
 [
-	{
-		"Name": "terminal-user-agent",
-		"Summary": "Open handler for HTTP and HTTPS URLs",
-		"Version": "1.1",
-		"Source": "terminal-user-agent.mx",
+    {
+        "Name": "terminal-user-agent",
+        "Summary": "Open handler for HTTP and HTTPS URLs",
+        "Version": "1.2",
+        "Source": "terminal-user-agent.mx",
         "Dependencies": {
             "Optional": [
                 "browsh",
@@ -16,5 +16,5 @@
                 "any"
             ]
         }
-	}
+    }
 ]

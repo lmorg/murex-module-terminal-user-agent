@@ -36,12 +36,12 @@ func https {
 
 private open.http.start.user.agent {
     test define config {
-        "OutRegexp": "[a-z]+",
+        "StdoutRegex": "[a-z]+",
         "ExitNum": 0
     }
 
     test define args {
-        "OutRegexp": "[a-z]+",
+        "StdoutRegex": "[a-z]+",
         "ExitNum": 0
     }
 

@@ -2,7 +2,7 @@
     {
         "Name": "terminal-user-agent",
         "Summary": "Open handler for HTTP and HTTPS URLs",
-        "Version": "1.2",
+        "Version": "1.3",
         "Source": "terminal-user-agent.mx",
         "Dependencies": {
             "Optional": [

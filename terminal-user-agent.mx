@@ -24,12 +24,12 @@ private open.http.get.args {
     }
 }
 
-func http {
+function http {
     # Render a web page in the terminal
     open.http.start.user.agent http $ARGS[1]
 }
 
-func https {
+function https {
     # Render a web page in the terminal
     open.http.start.user.agent https $ARGS[1]
 }
